@@ -1,0 +1,74 @@
+Ruby Note
+
+2015/04/27
+	1. Ubuntu 14.04.2
+	2. Sublime Text 2
+		$ sudo add-apt-repository ppa:webupd8team/sublime-text-2
+		$ sudo apt-get update
+		$ sudo apt-get install sublime-text
+	3. Ruby
+		$ sudo apt-get install ruby 
+			=> Ruby 1.9.3
+	4. Install rvm for Ruby version switcher (RVM means Ruby Version Manager)
+		$ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+		$ \curl -sSL https://get.rvm.io | bash -s stable
+	5. Install Ruby 2.2
+		$ rvm install 2.2
+			=> Ruby 2.2
+	6. Notes Part 1 (waiting for installation of Ruby 2.2 :P)
+		Ruby is a language, but Rails is not.
+		CRUD includes 7 methods that a request from client to server.
+		Rails includes MVC which means Model, View, and Controller.
+		Methods that use a lot are stored in Model.
+		View handles the format that shows to user.
+		Controller ensure the data flow and the basic culculation.
+		bundler is a way to install all the gems needed in project that listed in the gem file.
+	7.  Set RVM default to latest Ruby version
+		$ rvm alias create default ruby-2.2.1
+	(Option) Install git
+		$ sudo apt-get update
+		$ sudo apt-get install git
+	8. Install Rails
+		$ gem install rails
+	9. Notes Part 2 (waiting for rails installization)
+		Before we start create our ror project, the most important thing to do is making decision to the database that use to store the data we need. 
+	10. Start our first rails project
+		$ rails new <project name>
+			ex. rails new blog 
+			It will run bundle install automatically. 
+	11. Try our rails result 
+		$ cd <project name>
+		$ rails s
+			to start the server
+		open browser and type http://localhost:3000/  to test the page.
+	12. OK, lets starting to design our database
+		for example, we need a table that contains a name and a email, and both of them are type string.
+		$ rails generate scaffold <table name> <column name>:<data type>
+			ex. rails generate scaffold User name:string email:string
+	13. Notes part3 (waiting the generation :p)
+		db/migrate/ is used to save the creation history of database.
+		app/models/ contains the methods used in project.
+		test_unit help developer to devoid error.
+		app/views/ contains CRUD pages.
+	14. Communitation to database each time you modify the database
+		$ rake db:migrate
+	15. We can see <project name>/config/database.yml to get the connect details.
+	16. Now we can enter the console of db to see what we have
+		$ rails dbconsole
+		$ .table
+			to see tables we have
+		type Ctrl+D to leave
+	17. Check how many resources for the user
+		$ rake routes
+			we can see the details for the entrances for a user to enter.
+	18. We can enter http://localhost:3000/users but there is a javascript error
+		We need to add a new line in gemfile.
+		=> gem 'therubyracer'
+		save then type 
+		$ bundle install
+		$ rails s
+	19. OK, we can back to http://localhost:3000/users to see the result
+		you can try creating a new user, and showing, editing and destroying it.
+	20. Notes part4 (happy ending)
+		forget about it :D, see you next time.
+
