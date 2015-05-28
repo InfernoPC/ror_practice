@@ -72,3 +72,12 @@ Ruby Note
 	20. Notes part4 (happy ending)
 		forget about it :D, see you next time.
 
+2015/05/04
+	1. Note part 1
+		http request: post and get are most used.
+		command: ls, cd, touch, cat, rm, mv, cp, rails, bundle, rake and git.
+		in \db\migrate\, the histories of db creation are stored. each migration create a file that lists the differences from last migration.
+		in \config\routes.rb, 
+			resources :users	means the 7 methods (index, show, new, edit, create, update, destroy)
+			resource :home 	means the 6 methods (index is not included)rake 
+		
